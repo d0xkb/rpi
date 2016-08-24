@@ -16,9 +16,10 @@ echo "[+]temperature script downloaded and ready"
 timedatectl set-timezone Europe/Prague >/dev/null
 echo "[i]timezone set to Europe/Prague"
 
-#nano color syntax
+#vim/nano color syntax
 echo 'include "/usr/share/nano/nanorc.nanorc"' > ~/.nanorc
-echo "[+]nano config updated"
+echo 'syntax on' > ~/.vimrc
+echo "[+]vim/nano syntax colored"
 
 #update and upgrade via apt
 apt-get -qq update &>/dev/null
