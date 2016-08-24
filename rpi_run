@@ -3,7 +3,7 @@
 #usage: curl -Lo- http://raw.github.com/dakb/rpi/master/rpi_run | bash
 
 #variables
-packages="htop tcpdump iotop rsync ntpdate dnsutils"
+packages="htop tcpdump iotop rsync ntpdate dnsutils vim bc"
 services="hciuart.service bluetooth.service avahi-daemon.service fake-hwclock.service"
 temp="http://raw.github.com/dakb/rpi/master/temp"
 
