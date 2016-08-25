@@ -38,16 +38,26 @@ echo "[-]some services disabled for autostart"
 #update rc.local
 sed -i '/exit/i \
 #set time via ntpdate right after reboot \
-ntpdate -u -b cz.pool.ntp.org >> /var/log/rc.local.log 2>&1 \
+ntpdate -u -b ntp.nic.cz >> /var/log/rc.local.log 2>&1 \
 ' /etc/rc.local
 echo "[+]rc.local updated"
 
 #update ntpdate config
 cat > /etc/default/ntpdate
 NTPDATE_USE_NTP_CONF=no
-NTPSERVERS="cz.pool.ntp.org"
+NTPSERVERS="ntp.nic.cz"
 NTPOPTIONS="u"
 echo "[+]ntpdate config updated"
+
+cat > /etc/chrony.conf <<EOF
+server ntp.nic.cz prefer iburst
+server tik.cesnet.cz iburst
+server tak.cesnet.cz iburst
+driftfile /etc/chrony.drift
+deny all
+rtconutc
+rtcsync
+EOF
 
 #unload wifi/bt drivers
 cat > /etc/modprobe.d/raspi-blacklist.conf <<EOF
