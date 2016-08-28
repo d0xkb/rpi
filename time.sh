@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#RPi time setup
-
 #install ntpdate and chrony
 apt-get -y install ntpdate chrony
 
@@ -38,5 +36,3 @@ cat > /etc/rc.local <<EOF
 ntpdate -u -b ntp.nic.cz >> /var/log/rc.local.log 2>&1
 exit 0
 EOF
-
-echo "[i]RPi time setup completed"
