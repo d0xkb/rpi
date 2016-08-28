@@ -11,13 +11,6 @@ systemctl enable chrony.service
 timedatectl set-ntp false
 timedatectl set-timezone Europe/Prague
 
-#create ntpdate config
-cat > /etc/default/ntpdate <<EOF
-NTPDATE_USE_NTP_CONF=no
-NTPSERVERS="ntp.nic.cz"
-NTPOPTIONS="u"
-EOF
-
 #create chrony config
 cat > /etc/chrony/chrony.conf <<EOF
 server ntp.nic.cz prefer iburst
