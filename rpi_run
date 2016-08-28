@@ -9,8 +9,8 @@ temp="http://raw.github.com/dakb/rpi/master/temp"
 time="http://raw.github.com/dakb/rpi/master/time.sh"
 
 #update and upgrade via apt
-apt-get -qq update
-apt-get -qq upgrade -y >/dev/null
+apt-get -q update
+apt-get -q upgrade -y >/dev/null
 echo "[i]apt update and upgrade completed"
 
 #temperature script
@@ -28,7 +28,7 @@ echo 'syntax on' > ~/.vimrc
 echo "[+]vim syntax colored"
 
 #install additional packages
-apt-get -qq -y install $packages >/dev/null
+apt-get -q -y install $packages >/dev/null
 echo "[+]additional packages installed"
 
 #disable few services
@@ -87,8 +87,8 @@ EOF
 echo "[i]bashrc modified"
 
 #cleaning via apt
-apt-get -qq autoclean >/dev/null
-apt-get -qq -y autoremove >/dev/null
+apt-get -q autoclean >/dev/null
+apt-get -q autoremove >/dev/null
 echo "[i]apt clean, unused packages removed"
 
 #done, restart
