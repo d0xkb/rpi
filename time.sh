@@ -4,7 +4,7 @@
 apt-get -y install ntpdate chrony
 
 #services adjustment
-systemctl disable fake-hwclock.service
+systemctl disable fake-hwclock.service ntp.service
 systemctl enable chrony.service
 
 #set correct timezone
