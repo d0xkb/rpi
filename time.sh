@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #install ntpdate and chrony
-apt-get -y install ntpdate chrony
+apt-get -q -y install ntpdate chrony
 
 #services adjustment
 systemctl disable fake-hwclock.service ntp.service
