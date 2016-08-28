@@ -1,16 +1,15 @@
 #!/bin/bash
-#Raspberry Pi 3 post installation script
 #usage: curl -Lo- http://raw.github.com/dakb/rpi/master/rpi_run | bash
 
 #variables
 packages="htop tcpdump iotop rsync dnsutils vim bc"
 services="hciuart.service bluetooth.service avahi-daemon.service"
 temp="http://raw.github.com/dakb/rpi/master/temp"
-time="http://raw.github.com/dakb/rpi/master/time.sh"
+tconf="http://raw.github.com/dakb/rpi/master/time.sh"
 
 #update and upgrade via apt
 apt-get -q update
-apt-get -q upgrade -y >/dev/null
+apt-get -q -y upgrade >/dev/null
 echo "[i]apt update and upgrade completed"
 
 #temperature script
@@ -19,7 +18,7 @@ chmod u+x /usr/bin/temp
 echo "[+]temperature script downloaded and ready"
 
 #time setup
-wget -q $time -P /tmp/
+wget -q $tconf -P /tmp/
 bash /tmp/time.sh >/dev/null
 echo "[i]time setup completed"
 
