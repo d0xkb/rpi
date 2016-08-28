@@ -19,7 +19,7 @@ NTPOPTIONS="u"
 EOF
 
 #create chrony config
-cat > /etc/chrony.conf <<EOF
+cat > /etc/chrony/chrony.conf <<EOF
 server ntp.nic.cz prefer iburst
 server tik.cesnet.cz iburst
 server tak.cesnet.cz iburst
