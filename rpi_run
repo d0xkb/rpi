@@ -1,5 +1,5 @@
 #!/bin/bash
-#Raspberry Pi post installation script
+#Raspberry Pi 3 post installation script
 #usage: curl -Lo- http://raw.github.com/dakb/rpi/master/rpi_run | bash
 
 #variables
