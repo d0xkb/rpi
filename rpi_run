@@ -20,7 +20,7 @@ echo "[+]temperature script downloaded and ready"
 
 #time setup
 wget -q $time -P /tmp/
-bash /tmp/time.sh
+bash /tmp/time.sh >/dev/null
 echo "[i]time setup completed"
 
 #vim color syntax
@@ -28,11 +28,11 @@ echo 'syntax on' > ~/.vimrc
 echo "[+]vim syntax colored"
 
 #install additional packages
-apt-get -q install $packages -y >/dev/null
+apt-get -qq -y install $packages >/dev/null
 echo "[+]additional packages installed"
 
 #disable few services
-systemctl disable $services &>/dev/null
+systemctl disable $services >/dev/null
 echo "[-]some services disabled for autostart"
 
 #unload wifi/bt drivers
@@ -88,9 +88,8 @@ echo "[i]bashrc modified"
 
 #cleaning via apt
 apt-get -qq autoclean >/dev/null
-apt-get -qq autoremove -y >/dev/null
+apt-get -qq -y autoremove >/dev/null
 echo "[i]apt clean, unused packages removed"
 
 #done, restart
 shutdown -r 1 "restart in 1 min"
-echo "[i]done, restart in 1 min, type shutdown -c to cancel"
