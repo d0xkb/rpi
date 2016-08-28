@@ -65,7 +65,7 @@ echo "[i]apt archive linked to ramdisk"
 
 #persistently disable swap
 swapoff --all
-apt-get -qq -y remove dphys-swapfile >/dev/null
+apt-get -q -y remove dphys-swapfile >/dev/null
 echo "[-]swap disabled"
 
 #.bashrc moficiations for root
