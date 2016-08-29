@@ -4,8 +4,8 @@
 #variables
 packages="htop tcpdump iotop rsync dnsutils vim bc"
 services="hciuart.service bluetooth.service avahi-daemon.service"
-temp="http://raw.github.com/dakb/rpi/master/temp"
-tconf="http://raw.github.com/dakb/rpi/master/time.sh"
+temp="http://raw.github.com/d0xkb/rpi/master/temp"
+tconf="http://raw.github.com/d0xkb/rpi/master/time.sh"
 
 #update and upgrade via apt
 apt-get -q update
