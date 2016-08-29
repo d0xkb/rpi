@@ -23,7 +23,7 @@ bash /tmp/time.sh >/dev/null
 echo "[i]time setup completed"
 
 #vim color syntax
-echo 'syntax on' > ~/.vimrc
+echo "syntax on" > ~/.vimrc
 echo "[+]vim syntax colored"
 
 #install additional packages
