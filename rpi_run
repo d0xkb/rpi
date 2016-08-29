@@ -87,7 +87,7 @@ echo "[i]bashrc modified"
 
 #cleaning via apt
 apt-get -q autoclean >/dev/null
-apt-get -q autoremove >/dev/null
+apt-get -q -y autoremove >/dev/null
 echo "[i]apt clean, unused packages removed"
 
 #done, restart
