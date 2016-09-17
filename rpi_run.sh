@@ -1,10 +1,10 @@
 #!/bin/bash
-#usage: curl -Lo- http://raw.github.com/dakb/rpi/master/rpi_run | bash
+#usage: curl -Lo- http://raw.github.com/dakb/rpi/master/rpi_run.sh | bash
 
 #variables
 packages="htop tcpdump iotop rsync dnsutils vim bc"
 services="hciuart.service bluetooth.service avahi-daemon.service"
-temp="http://raw.github.com/d0xkb/rpi/master/temp"
+temp="http://raw.github.com/d0xkb/rpi/master/temp.sh"
 tconf="http://raw.github.com/d0xkb/rpi/master/time.sh"
 
 #update and upgrade via apt
@@ -14,7 +14,7 @@ echo "[i]apt update and upgrade completed"
 
 #temperature script
 wget -q $temp -P /usr/bin/
-chmod u+x /usr/bin/temp
+chmod u+x /usr/bin/temp.sh
 echo "[+]temperature script downloaded and ready"
 
 #time setup
