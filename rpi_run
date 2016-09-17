@@ -91,4 +91,4 @@ apt-get -q -y autoremove >/dev/null
 echo "[i]apt clean, unused packages removed"
 
 #done, restart
-shutdown -r 1 "restart in 1 min"
+shutdown -r now
