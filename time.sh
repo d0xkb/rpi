@@ -20,10 +20,11 @@ server tak.cesnet.cz iburst
 driftfile /etc/chrony.drift
 makestep 1 -1
 noclientlog
+rtcsync
 deny all
 EOF
 
-#sync time after each reboot
+#sync and log time after each reboot
 cat > /etc/rc.local <<EOF
 #!/bin/sh -e
 #set time via ntpdate right after reboot

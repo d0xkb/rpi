@@ -41,7 +41,7 @@ echo "[+]additional packages installed"
 systemctl disable $services
 echo "[-]some services disabled for autostart"
 
-#unload wifi/bt drivers
+#blacklist wifi/bluetooth modules
 cat > /etc/modprobe.d/raspi-blacklist.conf <<EOF
 #wifi kernel modules
 blacklist brcmfmac
@@ -51,7 +51,7 @@ blacklist brcmutil
 blacklist btbcm
 blacklist hci_uart
 EOF
-echo "[-]wifi/bt drivers unloaded"
+echo "[-]wifi/bluetooth modules blacklisted"
 
 #create and mount ramdisk
 mkdir /ramdisk
@@ -71,7 +71,7 @@ echo "[i]apt archive linked to ramdisk"
 
 #persistently disable swap
 swapoff --all
-apt-get -y remove dphys-swapfile >/dev/null
+apt-get -y remove dphys-swapfile
 echo "[-]swap disabled"
 
 #.bashrc moficiations for root
@@ -93,8 +93,8 @@ EOF
 echo "[i]bashrc modified"
 
 #cleaning via apt
-apt-get autoclean >/dev/null
-apt-get -y autoremove >/dev/null
+apt-get autoclean
+apt-get -y autoremove
 echo "[i]apt clean, unused packages removed"
 
 #done, restart
