@@ -15,8 +15,8 @@ temp="http://raw.github.com/d0xkb/rpi/master/temp.sh"
 tconf="http://raw.github.com/d0xkb/rpi/master/time.sh"
 
 #update and upgrade via apt
-apt-get -q update
-apt-get -q -y upgrade >/dev/null
+apt-get update
+apt-get -y upgrade
 echo "[i]apt update and upgrade completed"
 
 #temperature script
@@ -26,7 +26,7 @@ echo "[+]temperature script downloaded and ready"
 
 #time setup
 wget -q $tconf -P /tmp/
-bash /tmp/time.sh >/dev/null
+bash /tmp/time.sh
 echo "[i]time setup completed"
 
 #vim color syntax
@@ -34,11 +34,11 @@ echo "syntax on" > ~/.vimrc
 echo "[+]vim syntax colored"
 
 #install additional packages
-apt-get -q -y install $packages >/dev/null
+apt-get -y install $packages
 echo "[+]additional packages installed"
 
 #disable few services
-systemctl disable $services >/dev/null
+systemctl disable $services
 echo "[-]some services disabled for autostart"
 
 #unload wifi/bt drivers
@@ -71,7 +71,7 @@ echo "[i]apt archive linked to ramdisk"
 
 #persistently disable swap
 swapoff --all
-apt-get -q -y remove dphys-swapfile >/dev/null
+apt-get -y remove dphys-swapfile >/dev/null
 echo "[-]swap disabled"
 
 #.bashrc moficiations for root
@@ -93,8 +93,8 @@ EOF
 echo "[i]bashrc modified"
 
 #cleaning via apt
-apt-get -q autoclean >/dev/null
-apt-get -q -y autoremove >/dev/null
+apt-get autoclean >/dev/null
+apt-get -y autoremove >/dev/null
 echo "[i]apt clean, unused packages removed"
 
 #done, restart
