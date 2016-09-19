@@ -1,6 +1,13 @@
 #!/bin/bash
 #usage: curl -Lo- http://raw.github.com/dakb/rpi/master/rpi_run.sh | bash
 
+#user check
+if [ "$UID" -ne "0" ]
+then
+	echo "Use this script as root."
+	exit 1
+else
+
 #variables
 packages="htop tcpdump iotop rsync dnsutils vim bc"
 services="hciuart.service bluetooth.service avahi-daemon.service"
