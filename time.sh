@@ -21,8 +21,6 @@ driftfile /etc/chrony.drift
 makestep 1 -1
 noclientlog
 deny all
-rtconutc
-rtcsync
 EOF
 
 #sync time after each reboot
