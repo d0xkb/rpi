@@ -8,7 +8,7 @@ systemctl disable fake-hwclock.service ntp.service
 systemctl stop chrony.service
 systemctl enable chrony.service
 
-#set correct timezone
+# set correct timezone
 timedatectl set-ntp false
 timedatectl set-timezone Europe/Prague
 
