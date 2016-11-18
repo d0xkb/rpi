@@ -5,5 +5,5 @@ this is my first script to RUN after setting up SD card for Raspberry Pi 3. It s
 Usage
 -----
 ````
-curl -Lo- http://raw.github.com/d0xkb/rpi/master/rpi_run.sh | bash
+curl -Lo- http://raw.github.com/d0xkb/rpi/master/run.sh | bash
 ````
