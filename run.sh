@@ -15,7 +15,13 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 packages="htop tcpdump iotop rsync dnsutils bc"
 services="hciuart.service bluetooth.service avahi-daemon.service fake-hwclock.service ntp.service"
 
-#update and upgrade via apt
+# set LANG/LC; avoids errors during apt usage
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# update and upgrade via apt
 apt-get update
 apt-get -y upgrade
 
@@ -38,12 +44,10 @@ mount -a -t tmpfs
 # delete and link apt cache
 rm -rf /var/cache/apt/archives
 ln -s /ramdisk /var/cache/apt/archives
-echo "[i]apt archive linked to ramdisk"
 
 # persistently disable swap
 swapoff --all
 apt-get -y remove dphys-swapfile
-echo "[-]swap disabled"
 
 # .bashrc setup
 rm -rf /root/.bashrc
