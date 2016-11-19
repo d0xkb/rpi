@@ -5,5 +5,8 @@ this is my first script to RUN after setting up SD card for Raspberry Pi 3. It s
 Usage
 -----
 ````
-curl -Lo- http://raw.github.com/d0xkb/rpi/master/run.sh | bash
+apt-get update && apt-get -y install unzip
+wget https://github.com/d0xkb/rpi/archive/master.zip
+unzip master.zip && cd rpi-master
+bash run.sh
 ````
