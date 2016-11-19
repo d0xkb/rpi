@@ -2,11 +2,14 @@
 
 #blacklist wifi/bluetooth modules
 cat > /etc/modprobe.d/raspi-blacklist.conf <<EOF
-#wifi kernel modules
+# disable wifi kernel modules
 blacklist brcmfmac
 blacklist brcmutil
 
-#bt kernel modules
+# disable bluetooth kernel modules
 blacklist btbcm
 blacklist hci_uart
+
+# blacklist intel_rapl kernel module to avoid "no valid rapl" error
+blacklist intel_rapl
 EOF
