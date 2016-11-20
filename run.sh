@@ -54,7 +54,7 @@ rm -rf /root/.bashrc
 cp -p $DIR/scripts/.bashrc /root/.bashrc
 
 # blacklist modules
-. $DIR/scripts/bl.sh
+. $DIR/scripts/modules.sh
 
 # chrony setup
 . $DIR/scripts/chrony.sh

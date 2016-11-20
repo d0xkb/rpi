@@ -39,7 +39,7 @@ rtcsync
 # Keep RTC to use UTC.
 rtconutc
 
-# If offset is larger than 0.1 second, adjust time in first 10 updates.
+# If offset is larger than 1 second, adjust time immediately.
 makestep 1 -1
 
 # Deny NTP client requests.
