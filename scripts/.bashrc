@@ -20,10 +20,10 @@ shopt -s histappend
 shopt -s checkwinsize
 
 # locale setup
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_TYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+export LANGUAGE=en_GB.UTF-8
+export LANG=en_GB.UTF-8
+export LC_TYPE=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
 
 # few aliases
 alias ll='ls -halF --color=auto'

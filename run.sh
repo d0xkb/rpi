@@ -15,11 +15,14 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 packages="htop tcpdump iotop rsync dnsutils bc"
 services="hciuart.service bluetooth.service avahi-daemon.service fake-hwclock.service ntp.service"
 
+# generate locale before installation
+locale-gen en_GB.UTF-8
+
 # set LANG/LC; avoids errors during apt usage
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_TYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+export LANGUAGE=en_GB.UTF-8
+export LANG=en_GB.UTF-8
+export LC_TYPE=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
 
 # update and upgrade via apt
 apt-get update
