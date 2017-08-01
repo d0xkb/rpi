@@ -56,14 +56,18 @@ apt-get -y remove dphys-swapfile
 rm -rf /root/.bashrc
 cp -p $DIR/scripts/.bashrc /root/.bashrc
 
+# temperature script setup
+mv $DIR/scripts/temp.sh /usr/bin/temp
+chmod o+x /usr/bin/temp
+
 # blacklist modules
-. $DIR/scripts/modules.sh
+source $DIR/scripts/modules.sh
 
 # chrony setup
-. $DIR/scripts/chrony.sh
+source $DIR/scripts/chrony.sh
 
 # ssh setup
-. $DIR/scripts/ssh.sh
+source $DIR/scripts/ssh.sh
 
 # change from graphical.target (default) to multi-user.target
 if [[ $(systemctl get-default) != "multi-user.target" ]]; then
